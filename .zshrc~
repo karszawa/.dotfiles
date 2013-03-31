@@ -19,7 +19,7 @@ RPROMPT='[%.]'
 alias e='/opt/local/bin/emacs -nw'
 alias g='git'
 alias ls='ls -al'
-alias rm='rmtrash'
+alias rm='rm -rf'
 
 
 #####################

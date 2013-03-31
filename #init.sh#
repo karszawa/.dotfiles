@@ -1,0 +1,8 @@
+
+# conditions
+# macports was installed
+# this repository is in home-directory
+
+
+# symbolic-link
+ln -s ~/.dotfiles/.emacs.d ~/.emacs.d

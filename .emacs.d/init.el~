@@ -1,0 +1,59 @@
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; TODO
+;;;;;;;;;;;;;;;;;;;;;;;;
+; - 行表示
+; - 行ハイライト
+; - junkファイル系
+; - color-theme決定
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; LOADPATH
+;;;;;;;;;;;;;;;;;;;;;;;;
+(setq load-path (cons "~/.dotfiles/.emacs.d/elisp" load-path))
+(setq custom-theme-directory "~/.dotfiles/.emacs.d/color")
+(require 'auto-save-buffers)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; KEYBIND
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Ctrl+hでバッグスペース
+(global-set-key "\C-h" 'delete-backward-char)
+
+; Ctrl+x, Ctrl+gでGoto line
+(global-set-key "\C-x\C-h", 'goto-line)
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; GENERAL
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+; color
+(load-theme 'molokai t)
+(enable-theme 'molokai)
+
+; 自動保存
+(run-with-idle-timer 0.5 t 'auto-save-buffers)
+
+; タブ幅設定
+(setq-default tab-width 2)
+(setq default-tab-width 2)
+(setq tab-stop-list '(2 4 6 8 10 12 14 16 18 20 22 24 26 28 30
+                      32 34 36 38 40 42 44 46 48 50 52 54 56 58 60
+		      62 64 66 68 70 72 74 76 78 80 82 84 86 88 90
+		      92 94 96 98 100 102 104 106 108 110 112 114 116 118 120))
+
+; *~系のバッグアップファイルを作らない
+(setq make-backup-files nil)
+
+; #*#系のバッグアップファイルを作らない
+(setq auto-save-default nil)
+
+; ファイル選択で大文字と小文字を区別しない
+; http://shibayu36.hatenablog.com/entry/2012/12/29/001418
+(setq completion-ignore-case t)
+
+; バッファを自動で再読み込み
+; http://shibayu36.hatenablog.com/entry/2012/12/29/001418
+(global-auto-revert-mode 1)
